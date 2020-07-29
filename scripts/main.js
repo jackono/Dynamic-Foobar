@@ -1,3 +1,13 @@
+var SpeechRecognition = SpeechRecognition || webkitSpeechRecognition;
+var recognition = new SpeechRecognition();
+recognition.continuous = true;
+let content = "";
+
+recognition.onresult = async function (event) {
+  console.log(event.results[event.results.length - 1][0].transcript);
+  content += event.results[event.results.length - 1][0].transcript + "\n";
+};
+
 var isStarted = false;
 function processRecording(action) {
   var type = $("#ai-listen-type").val();
@@ -17,7 +27,7 @@ function processRecording(action) {
         isStarted = true;
         $("#ai-start-btn").hide();
         $("#ai-stop-btn").show();
-
+        recognition.start();
       }
     })
   }else {
@@ -34,6 +44,9 @@ function processRecording(action) {
         isStarted = false;
         $("#ai-start-btn").show();
         $("#ai-stop-btn").hide();
+        download(content, 'extract.txt','UTF8')
+        content = ""
+        recognition.stop()
         saveRecording();
       }
     })
@@ -141,4 +154,21 @@ function swalSuccess(message ) {
         html: html
     })
       $(".swal2-height-auto").removeClass();
+}
+function download(data, filename, type) {
+  var file = new Blob([data], {type: type});
+  if (window.navigator.msSaveOrOpenBlob) // IE10+
+      window.navigator.msSaveOrOpenBlob(file, filename);
+  else { // Others
+      var a = document.createElement("a"),
+              url = URL.createObjectURL(file);
+      a.href = url;
+      a.download = filename;
+      document.body.appendChild(a);
+      a.click();
+      setTimeout(function() {
+          document.body.removeChild(a);
+          window.URL.revokeObjectURL(url);
+      }, 0);
+  }
 }
