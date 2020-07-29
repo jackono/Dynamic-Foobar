@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>AI - Hackathon</title>
+    <link rel="stylesheet" href="../lib/bootstrap/bootstrap.css">
+    <script src="../lib/jquery-3.2.1.min.js" charset="utf-8"></script>
+    <script src="../lib/bootstrap/bootstrap.js" charset="utf-8"></script>
+    <script src="../lib/sweetalert2.all.min.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="../lib/style/master.css">
+    <script src="https://kit.fontawesome.com/eff8a08b2e.js" crossorigin="anonymous"></script>
+
+  </head>
+  <body>
+    <h1 class="color-d-blue pointer" style="position:absolute;right:10px;top:10px" >
+      <p>John Doe <i  class="fas fa-sign-out-alt"></i></p>
+
+    </h1>
+    <div class="m-5" style=" margin-top:5% !important;">
+      <div class="p-5">
+        <div class="p-4" >
+          <b  style="font-size:3rem!important;"><span style="color:#447ee3;">Secretary</span>Kim</b>
+          <i> <h5>Your meeting assistant</h5> </i>
+        </div>
+
+        <div class="row">
+          <div class="col sm-6">
+            <img  src="../lib/images/banner.png" alt="">
+          </div>
+          <div class="col sm-6 text-center">
+              <div  id="ai-start-btn">
+                <div class="form-group m-custom-cpu w-100"  >
+                  <label>Choose Listen Type</label>
+                  <select  id="ai-listen-type" class="custom-select">
+                    <option value="mic">Mic</option>
+                    <option value="mic">Speaker</option>
+                    <option value="mic">Both</option>
+                  </select>
+                </div>
+
+                <div>
+                  <i style="font-size:20em" onclick="processRecording('start')"  class="fas fa-microphone pointer color-d-blue"></i>
+                  <p>(Click to Start Recording)</p>
+                </div>
+              </div>
+              <div class="p-5"  id="ai-stop-btn"  style="display:none;">
+                <br>
+                <i style="font-size:20em"  onclick="processRecording('stop')" class="spinner fas fa-compact-disc pointer color-d-blue"></i>
+                <p>(Click to Stop Recording)</p>
+              </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </body>
+  <script src="../scripts/main.js" charset="utf-8"></script>
+</html>
