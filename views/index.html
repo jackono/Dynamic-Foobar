@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>AI - Hackathon</title>
+    <link rel="stylesheet" href="../lib/bootstrap/bootstrap.css">
+    <script src="../lib/jquery-3.2.1.min.js" charset="utf-8"></script>
+    <script src="../lib/bootstrap/bootstrap.js" charset="utf-8"></script>
+    <script src="../lib/sweetalert2.all.min.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="../lib/style/master.css">
+    <script src="https://kit.fontawesome.com/eff8a08b2e.js" crossorigin="anonymous"></script>
+
+  </head>
+  <body>
+    <div class="m-5" style=" margin-top:5% !important;">
+      <div class="p-5">
+        <div class="p-4" >
+          <b  style="font-size:3rem!important;"><span style="color:#447ee3;">Secretary</span>Kim</b>
+          <i> <h5>Your meeting assistant</h5> </i>
+        </div>
+
+        <div class="row">
+          <div class="col sm-6">
+            <img src="../lib/images/banner.png" alt="">
+          </div>
+          <div class="col sm-6">
+            <form>
+              <h1>How are you?</h1>
+              <h5>Please login with your email address and password.</h5>
+              <div class="p-5">
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="far fa-envelope"></i></span>
+                  </div>
+                  <input type="text" id='ai-email' class="form-control" placeholder="Email Address">
+                </div>
+                <div class="input-group  ">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" style="border-bottom:  1.5px solid #274475;"><i class="fas fa-lock" style="font-size:2.1rem!important;"></i></span>
+                  </div>
+                  <input style="border-bottom:  1.5px solid #274475;" type="password" id='ai-password' class="form-control" placeholder="Password">
+                </div>
+                <a onclick="submitLogin()" class="login-btn mt-5" style="margin-left:30%;">Login</a>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="../scripts/login.js" charset="utf-8"></script>
+</html>
