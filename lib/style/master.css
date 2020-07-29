@@ -1,3 +1,15 @@
+body {
+  /* The image used */
+  background-image: url("../images/bg.jpg");
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 .input-group input {
   font-size: 1.8rem;
   border-radius: 0 !important;
